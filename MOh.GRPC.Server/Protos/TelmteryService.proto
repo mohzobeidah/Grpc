@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option csharp_namespace = "MOh.GRPC.Server.Protos";
+
+import "models.proto";
+
+service TelmteryService {
+	rpc sendMessage(TrackingMessage) returns (TrackingResponse);
+}
+

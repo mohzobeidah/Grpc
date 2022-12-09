@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "MOh.GRPC.Server.Protos";
+
+import "google/protobuf/timestamp.proto";
+
+message TrackingMessage
+{
+	int32 devicedId =1;
+	int32 speed =2;
+	Location location=3;
+	google.protobuf.Timestamp stamp=4;
+	repeated Sensor sensor =5;
+}
+message Location
+{
+	double lang =1;
+	double lat =2;
+}
+
+
+message TrackingResponse{
+	bool success =1;
+	
+}
+message Sensor
+{
+	string key =1;
+	double value=2;
+}
