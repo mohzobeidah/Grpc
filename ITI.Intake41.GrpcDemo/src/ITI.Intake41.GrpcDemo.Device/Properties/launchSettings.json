@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "ITI.Intake41.GrpcDemo.Device": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
