@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using Google.Protobuf.WellKnownTypes;
+using Grpc.Core;
 using MOh.GRPC.Server.Protos;
 
 namespace MOh.GRPC.Server.Services
@@ -19,6 +20,21 @@ namespace MOh.GRPC.Server.Services
             logger.LogInformation($"DevicedId {request.DevicedId} Speed :{request.Speed} sensor count {request.Sensor.Count}");
              
             return Task.FromResult( new TrackingResponse {Success=true });
+        }
+
+        public override async Task<Empty> keepAlive(IAsyncStreamReader<PulseMessage> requestStream, ServerCallContext context)
+        {
+            var task=Task.Run(async () => {
+                await foreach (var item in  requestStream.ReadAllAsync())
+                {
+                    logger.LogInformation($"{nameof(keepAlive)} status {item.Details} status {item.ClientStatus}");
+                }
+          
+            });
+
+            await task;
+            
+            return new Empty(); 
         }
     }
 }

@@ -28,3 +28,16 @@ message Sensor
 	string key =1;
 	double value=2;
 }
+
+enum ClientStatus
+{
+	INVALID=0;
+	WORKING=1;
+	FAILED=2;
+}
+message	PulseMessage
+{
+	ClientStatus clientStatus=1;
+	string details = 2;
+	google.protobuf.Timestamp stamp = 3;
+}
