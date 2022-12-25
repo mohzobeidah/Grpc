@@ -8,5 +8,6 @@ import "google/protobuf/Empty.proto";
 service TelmteryService {
 	rpc sendMessage(TrackingMessage) returns (TrackingResponse);
 	rpc keepAlive(stream PulseMessage) returns(google.protobuf.Empty);
+	rpc SubscribeNotifaction(SubscribeRequest) returns (stream Notifcation);
 }
 

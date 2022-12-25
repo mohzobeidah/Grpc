@@ -5,7 +5,13 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOh.GRPC.Server", "MOh.GRPC.Server\MOh.GRPC.Server.csproj", "{2BDB6AF1-7EAC-4213-A8F3-A45E9CEC4A9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moh.GRPC.Client", "Moh.GRPC.Client\Moh.GRPC.Client.csproj", "{5D4D6A90-8A29-494B-A951-7FB7A12719AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moh.GRPC.Client", "Moh.GRPC.Client\Moh.GRPC.Client.csproj", "{5D4D6A90-8A29-494B-A951-7FB7A12719AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EEA69D10-0753-49E3-92E2-0C74C886AA17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Intake41.GrpcDemo.Device", "E:\13.gRPC\gRPC-1\Demo\ITI.Intake41.GrpcDemo\src\ITI.Intake41.GrpcDemo.Device\ITI.Intake41.GrpcDemo.Device.csproj", "{242DB630-E98A-4D9C-881A-5393C10731DB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Intake41.GrpcDemo.Server", "E:\13.gRPC\gRPC-1\Demo\ITI.Intake41.GrpcDemo\src\ITI.Intake41.GrpcDemo.Server\ITI.Intake41.GrpcDemo.Server.csproj", "{F2FEE211-14B0-4C7B-821A-41B9AB3198C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,21 @@ Global
 		{5D4D6A90-8A29-494B-A951-7FB7A12719AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D4D6A90-8A29-494B-A951-7FB7A12719AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D4D6A90-8A29-494B-A951-7FB7A12719AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{242DB630-E98A-4D9C-881A-5393C10731DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242DB630-E98A-4D9C-881A-5393C10731DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242DB630-E98A-4D9C-881A-5393C10731DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242DB630-E98A-4D9C-881A-5393C10731DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2FEE211-14B0-4C7B-821A-41B9AB3198C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2FEE211-14B0-4C7B-821A-41B9AB3198C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2FEE211-14B0-4C7B-821A-41B9AB3198C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2FEE211-14B0-4C7B-821A-41B9AB3198C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{242DB630-E98A-4D9C-881A-5393C10731DB} = {EEA69D10-0753-49E3-92E2-0C74C886AA17}
+		{F2FEE211-14B0-4C7B-821A-41B9AB3198C2} = {EEA69D10-0753-49E3-92E2-0C74C886AA17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4020E8E7-8DB3-4DD9-B490-1334976AD026}

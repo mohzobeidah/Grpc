@@ -41,3 +41,13 @@ message	PulseMessage
 	string details = 2;
 	google.protobuf.Timestamp stamp = 3;
 }
+
+message SubscribeRequest
+{
+	int32 devicedId=1;
+}
+
+message Notifcation {
+	string text=1;
+	google.protobuf.Timestamp stamp = 2;
+}

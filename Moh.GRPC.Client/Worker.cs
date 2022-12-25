@@ -18,6 +18,7 @@ namespace Moh.GRPC.Client
             var grpcChannel = GrpcChannel.ForAddress("https://localhost:5044");
             client = new TelmteryService.TelmteryServiceClient(grpcChannel);
 
+
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -29,12 +30,29 @@ namespace Moh.GRPC.Client
                 await sendMessage(rand);
 
                 // var stream = await client.keepAlive();
-                await   KeepAlive(stoppingToken);
+                   var x =KeepAlive(stoppingToken);
+                 var y =SubscribeNotidction(stoppingToken);
 
-
+              await   Task.WhenAll(x, y);
 
                  await Task.Delay(1000, stoppingToken);
             }
+        }
+
+        private async Task SubscribeNotidction(CancellationToken stoppingToken)
+        {
+            var resposeSretam = client.SubscribeNotifaction(new SubscribeRequest { DevicedId = Convert.ToInt32( devceId )});
+
+            var task =Task.Run(async () =>
+            {
+                while (await resposeSretam.ResponseStream.MoveNext(stoppingToken))
+                {
+                    var msg = resposeSretam.ResponseStream.Current;
+                    _logger.LogInformation($"notification {msg.Text} date {msg.Stamp}");
+                }
+
+            });
+            await task;
         }
 
         private async Task KeepAlive(CancellationToken stoppingToken)
